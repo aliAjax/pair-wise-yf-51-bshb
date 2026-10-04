@@ -66,5 +66,72 @@ header p, header small { color: #697880; margin: 0; }
 .events article { border-bottom: 1px solid #e5ebec; padding-bottom: 8px; }
 .events p { margin: 5px 0; color: #65757c; }
 .events small { color: #849097; }
+
+/* 提示条 */
+.banner { border-radius: 8px; padding: 9px 11px; margin: 0 0 10px; font-size: 13px; line-height: 1.5; }
+.banner.warn { background: #fff4e0; color: #8a5a13; border: 1px solid #f0d59a; }
+.banner.info { background: #e7f4f2; color: #0f6b5e; border: 1px solid #bfe3dd; }
+.banner.error { background: #fde5e5; color: #a43838; border: 1px solid #f0b8b8; }
+
+/* 字幕行内小标记 */
+.mini-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.chip.term-stale { background: #fde5e5; color: #a43838; }
+.chip.reconfirm { background: #fff1d8; color: #996515; }
+.chip.checked-out { background: #e7f4f2; color: #0f6b5e; }
+
+/* 冻结版本 */
+.frozen { border: 1px dashed #9fd3ca; background: #f2fbf9; border-radius: 8px; padding: 9px 11px; margin: 10px 0; font-size: 13px; }
+.frozen b { color: #0f6b5e; font-size: 12px; }
+.frozen p { margin: 6px 0 0; color: #42545b; }
+
+/* 审校意见 */
+.opinions { margin-top: 12px; border-top: 1px solid #e4eaeb; padding-top: 10px; }
+.opinions > b { font-size: 13px; color: #56676e; }
+.opinions article { border: 1px solid #e4eaeb; border-radius: 8px; padding: 8px 10px; margin-top: 8px; background: #fbfdfd; }
+.opinions article.adopted { border-color: #168f7f; background: #f1fbf8; }
+.opinion-head { display: flex; align-items: center; gap: 8px; }
+.opinion-head span { font-weight: 700; font-size: 13px; }
+.opinion-head small { color: #849097; }
+.opinions p { margin: 5px 0 7px; color: #56676e; font-size: 13px; }
+.empty { color: #9aa7ac; font-size: 13px; }
+
+/* 术语库 */
+.term { border-bottom: 1px solid #e4eaeb; padding: 10px 0; }
+.term-row { display: flex; align-items: center; gap: 8px; }
+.term-row span { white-space: nowrap; }
+.term-input { flex: 1; min-width: 0; padding: 6px 8px; }
+.term-meta { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.term-meta small { color: #849097; }
+
+/* 审校队列 */
+.queue-panel { margin-bottom: 18px; }
+.queue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.queue-grid h3 { margin: 0 0 10px; font-size: 14px; color: #56676e; }
+.queue-item { display: flex; gap: 10px; align-items: flex-start; border: 1px solid #dde5e7; border-radius: 9px; padding: 9px; margin-bottom: 8px; background: #fbfdfd; }
+.queue-item.held { background: #f2fbf9; border-color: #bfe3dd; }
+.queue-item input { margin-top: 4px; }
+.queue-item b { font-size: 13px; }
+.queue-item p { margin: 4px 0; color: #63737a; font-size: 13px; }
+.queue-item small { color: #849097; }
+.queue-item .btn { margin-left: auto; }
+
+/* 交付总览 */
+.delivery-panel { margin-bottom: 18px; }
+.delivery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+.delivery-card { border: 1px solid #dae3e5; border-radius: 11px; padding: 14px; background: #fbfdfd; display: flex; flex-direction: column; gap: 8px; }
+.delivery-card.已生成 { border-color: #168f7f; background: #f1fbf8; }
+.delivery-card.被挡住 { border-color: #d94c4c; background: #fff7f7; }
+.delivery-top { display: flex; justify-content: space-between; align-items: center; }
+.delivery-card small { color: #718087; }
+.reasons { margin: 0; padding-left: 18px; color: #a43838; font-size: 12px; display: grid; gap: 3px; }
+.delivery-card.已生成 .reasons { color: #0f735f; }
+.delivery-card .actions { margin-top: auto; align-items: center; }
+.chip.delivery.已生成 { background: #def5ee; color: #0f735f; }
+.chip.delivery.被挡住 { background: #fde5e5; color: #a43838; }
+.chip.delivery.未准备 { background: #e8eef0; color: #56676e; }
+.report { margin: 14px 0 0; background: #13262d; color: #cfe6e1; padding: 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; white-space: pre-wrap; overflow: auto; }
+
+@media(max-width: 1050px) { .queue-grid, .delivery-grid { grid-template-columns: 1fr; } }
+
 @media(max-width: 1050px) { .shell { grid-template-columns: 1fr; } .sidebar { position: static; height: auto; flex-direction: row; flex-wrap: wrap; } .keyboard { margin: 0; width: 100%; } .editor-grid, .bottom-grid { grid-template-columns: 1fr; } .metrics { grid-template-columns: repeat(2, 1fr); } }
 @media(max-width: 680px) { main { padding: 16px; } header { flex-direction: column; } .metrics, .cue-form, .time-fields { grid-template-columns: 1fr; } .cue { grid-template-columns: 70px 1fr; } .cue > *:nth-child(n+3) { grid-column: 2; } }
